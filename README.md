@@ -1,5 +1,5 @@
 # Member_Classification
-> Using marketing index to evaluate member's counsumption situation.
+> Using marketing index to evaluate member's counsumption situation. 
 > Author: Jung-Pu-Chang、容噗玩Data  
 > Date: 2023-08-23 
 
