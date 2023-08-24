@@ -70,7 +70,7 @@ CAI = test.CAI()
 |  **cur_month**  |  **current month**  | **int**  |
 |  **cur_day**  |  **current day**  | **int**  |
 |  **period_days**  |  **raw data period days**  | **int**  |
-|  **new_def**  |  **new customer definition : current_date - last_consuming_day**  | **int**  |
+|  **new_def**  |  **new customer definition : current_date - last_consuming_date**  | **int**  |
 
 ### 4. MemberClass.def CAI : 
 
