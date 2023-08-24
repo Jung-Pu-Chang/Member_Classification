@@ -39,20 +39,42 @@ CAI = test.CAI()
 
 ## Module Description : MemberClass.py  
 
-### Def Contents
+### 0. Def Contents
 | def  | purpose |
 |:------:|:-------:|
 | init | Transform format | 
-| LRFM | Caculate LRFM     | 
-| NES  | Caculate NES      |
-| CAI  | Caculate CAI      |
+| LRFM | Caculate LRFM in python    | 
+| NES  | Caculate NES  in python    |
+| CAI  | Caculate CAI  in python    |
 
-### MemberClass.def__init__ : 
-|  I (input) | O (output) |
-|:----------:|:------------:|
-|  **粗體**  |  `**粗體**`  |
-|   *斜體*   |   `*斜體*`   |
-| ~~刪除線~~ | `~~刪除線~~` |
+### 1. MemberClass.def__init__ : 
+|  Parameter | Discription | Type |
+|:----------:|:------------:|:------------:|
+|  **data**  |  **raw data**  | **data.frame**  |
+|  **memberID**  |  **col name of customerID**  | **str**  |
+|  **date**  |  **col name of date**  | **str**  |
+|  **quantity**  |  **col name of consuming times**  | **str**  |
+|  **spend**  |  **col name of consuming amount**  | **str**  |
+
+### 2. MemberClass.def LRFM : 
+|  Parameter | Discription | Type |
+|:----------:|:------------:|:------------:|
+|  **cur_year**  |  **current year**  | **int**  |
+|  **cur_month**  |  **current month**  | **int**  |
+|  **cur_day**  |  **current day**  | **int**  |
+
+### 3. MemberClass.def NES : 
+|  Parameter | Discription | Type |
+|:----------:|:------------:|:------------:|
+|  **cur_year**  |  **current year**  | **int**  |
+|  **cur_month**  |  **current month**  | **int**  |
+|  **cur_day**  |  **current day**  | **int**  |
+|  **period_days**  |  **raw data period days**  | **int**  |
+|  **new_def**  |  **new customer definition : current_date - last_consuming_day**  | **int**  |
+
+### 4. MemberClass.def CAI : 
+
+
 
 > Chinese Refference 
 >> [LRFM](https://tpl.ncl.edu.tw/NclService/pdfdownload?filePath=lV8OirTfsslWcCxIpLbUfqNJzW0J_5fY1AiPKrbU3_wbb2K0Ts9M4JxzFjBu1X1A&imgType=Bn5sH4BGpJw=&key=aAlnA0ah-t7Oq36Cwm4PtTrdg8Lw2BhvkLlDtTfcMr8eVVU9OyINO4qBZJhLTxWd&xmlId=0006815221)  
