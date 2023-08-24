@@ -21,39 +21,37 @@ class MemberClass:
         self.quantity = quantity
         self.spend = spend    
         self.data = data[[self.memberID,self.date,self.quantity,self.spend]] 
-        
         try :
             self.data[self.memberID] = self.data[self.memberID].astype(str)
-        except :
-            print('Chk: memberID column contains nan or not')
+        except ValueError: 
+            print("MemberID Format Transform Failed !\nChk : https://github.com/Jung-Pu-Chang/Member_Classification/blob/main/example.py")
         
         for fmt in ('%Y-%m-%d', '%Y/%m/%d', '%d-%m-%Y', '%d/%m/%Y'):
             try :
                 self.data[self.date] = pd.to_datetime(self.data[self.date], format = fmt)
                 #print(f"date format is {fmt}")
-            except :
-                print(f'{fmt} not date format')
+            except ValueError: 
+                print("Date Format Transform Failed !\nChk : https://github.com/Jung-Pu-Chang/Member_Classification/blob/main/example.py")
 
         try :
             self.data[self.quantity] = self.data[self.quantity].astype(int)
-        except :
-            print('Chk: quantity column contains nan、str or not')
-          
+        except ValueError: 
+            print("Quantity Format Transform Failed !\nChk : https://github.com/Jung-Pu-Chang/Member_Classification/blob/main/example.py")
+
         try :
             self.data[self.spend] = self.data[self.spend].astype(float)
-        except :
-            print('Chk: spend column contains nan、str or not')
-        
+        except ValueError: 
+            print("Spend Format Transform Failed !\nChk : https://github.com/Jung-Pu-Chang/Member_Classification/blob/main/example.py")
+
         self.df = self.data.sort_values([self.date, self.memberID], ascending=[True, True])
         self.first_consumption = self.df.drop_duplicates(subset=[self.memberID],keep='first')[[self.date, self.memberID]]
         self.last_consumption = self.df.drop_duplicates(subset=[self.memberID],keep='last')[[self.date, self.memberID]]
-        print("All Chk Finished !\nChoosing Caculate Index : LRFM、NES、CAI")
-     
-    def LRFM(self, year, month, day):
+    
+    def LRFM(self, cur_year, cur_month, cur_day):
         L = pd.merge(self.first_consumption, self.last_consumption, on=self.memberID,how='inner')
         L['L_raw_days'] = (L[self.date + '_y'] - L[self.date + '_x']).dt.days
         L.loc[(L['L_raw_days'] >= L['L_raw_days'].mean()), "L"] = 1 #高好>>接觸時間長
-        self.last_consumption['now'] = pd.to_datetime(datetime.date(year, month, day), format='%Y-%m-%d')
+        self.last_consumption['now'] = pd.to_datetime(datetime.date(cur_year, cur_month, cur_day), format='%Y-%m-%d')
         self.last_consumption['R_raw_days'] = (self.last_consumption['now'] - self.last_consumption[self.date]).dt.days    
         self.last_consumption.loc[(self.last_consumption['R_raw_days'] < self.last_consumption['R_raw_days'].mean()), "R"] = 1 #低好
         self.last_consumption['R'] = self.last_consumption['R'].fillna(0) 
@@ -71,8 +69,8 @@ class MemberClass:
         print("LRFM index: 1/0 = good/bad")
         return LRFM
     
-    def NES(self, year, month, day, period_days, new_def):
-        self.last_consumption['now'] = pd.to_datetime(datetime.date(year, month, day), format='%Y-%m-%d')
+    def NES(self, cur_year, cur_month, cur_day, period_days, new_def):
+        self.last_consumption['now'] = pd.to_datetime(datetime.date(cur_year, cur_month, cur_day), format='%Y-%m-%d')
         self.last_consumption['R_raw_days'] = (self.last_consumption['now'] - self.last_consumption[self.date]).dt.days    
         F = self.df.drop_duplicates(subset=[self.date, self.memberID],keep='first')
         F = F.groupby([self.memberID])[self.quantity].count().reset_index()

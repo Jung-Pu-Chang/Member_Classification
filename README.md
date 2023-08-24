@@ -2,6 +2,7 @@
 > Using marketing index to evaluate member's counsumption situation.  
 > Author: Jung-Pu-Chang、容噗玩Data  
 > Date: 2023-08-23 
+> [Chinese Explain](https://mastertalks.tw/products/data-scientist-resume?ref=pu2) 
 
 ## Directory
 
@@ -17,7 +18,7 @@
 ## Module Description : MemberClass.py
 | def  | purpose |
 |:------:|:-------:|
-| init | Consistent format | 
+| init | Transform format | 
 | LRFM | Caculate LRFM     | 
 | NES  | Caculate NES      |
 | CAI  | Caculate CAI      |
