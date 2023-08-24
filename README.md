@@ -70,7 +70,7 @@ CAI = test.CAI()
 |  **cur_day**  |  **current day**  | **int**  |
 
 ### 3. def NES : 
-> * NES : N = new customer = R_raw_days < new_def，E = freq_ratio ≤ 2，2 < S1 ≤ 2.5，2.5 < S2 ≤ 3，3 < S3
+> * NES : N = new customer = R_raw_days < new_def，E = freq_ratio ≤ 2、2 < S1 ≤ 2.5、2.5 < S2 ≤ 3、3 < S3
 > * count : every member consumes frequency per day (eg : Member A consumes five times(five envoices) in 2023/8/24, his count = 1)
 > * freq = count / period_days
 > * freq_ratio = R_raw_days / freq
