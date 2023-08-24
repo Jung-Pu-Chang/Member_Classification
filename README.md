@@ -47,7 +47,7 @@ CAI = test.CAI()
 | NES  | Caculate NES  in python    |
 | CAI  | Caculate CAI  in python    |
 
-### 1. MemberClass.def__init__ : 
+### 1. def__init__ : 
 |  Parameter | Discription | Type |
 |:----------:|:------------:|:------------:|
 |  **data**  |  **raw data**  | **data.frame**  |
@@ -56,7 +56,7 @@ CAI = test.CAI()
 |  **quantity**  |  **col name of consuming times**  | **str**  |
 |  **spend**  |  **col name of consuming amount**  | **str**  |
 
-### 2. MemberClass.def LRFM :  
+### 2. def LRFM :  
 > * L : L_raw_days = first_consuming_date - last_consuming_date, L_raw_days ≥ mean(L_raw_days) = 1, oterwise = 0, every member contact days  
 > * R : R_raw_days = current_date - last_consuming_date, R_raw_days < mean(R_raw_days) = 1, oterwise = 0, how long every member days  
 > * F : count(quantity) ≥ mean(count(quantity)) = 1, oterwise = 0, every member consumes frequency per day (eg : Member A consumes five times(five envoices) in 2023/8/24, his F = 1)
@@ -69,7 +69,7 @@ CAI = test.CAI()
 |  **cur_month**  |  **current month**  | **int**  |
 |  **cur_day**  |  **current day**  | **int**  |
 
-### 3. MemberClass.def NES : 
+### 3. def NES : 
 |  Parameter | Discription | Type |
 |:----------:|:------------:|:------------:|
 |  **cur_year**  |  **current year**  | **int**  |
@@ -78,7 +78,7 @@ CAI = test.CAI()
 |  **period_days**  |  **raw data period days**  | **int**  |
 |  **new_def**  |  **new customer definition : current_date - last_consuming_date**  | **int**  |
 
-### 4. MemberClass.def CAI : 
+### 4. def CAI : 
 
 
 ## Refference
