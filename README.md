@@ -70,6 +70,12 @@ CAI = test.CAI()
 |  **cur_day**  |  **current day**  | **int**  |
 
 ### 3. def NES : 
+> * NES : L_raw_days = first_consuming_date - last_consuming_date, L_raw_days ≥ mean(L_raw_days) = 1, oterwise = 0, every member contact days
+> * count
+> * freq
+> * freq_ratio
+> * R_raw_days = current_date - last_consuming_date
+
 |  Parameter | Discription | Type |
 |:----------:|:------------:|:------------:|
 |  **cur_year**  |  **current year**  | **int**  |
@@ -79,7 +85,10 @@ CAI = test.CAI()
 |  **new_def**  |  **new customer definition : current_date - last_consuming_date**  | **int**  |
 
 ### 4. def CAI : 
-
+> * CAI : < 0 = 0 > 0
+> * weight : R_raw_days = current_date - last_consuming_date, R_raw_days < mean(R_raw_days) = 1, oterwise = 0, how long every member days  
+> * avg_freq : count(quantity) ≥ mean(count(quantity)) = 1, oterwise = 0, every member consumes frequency per day (eg : Member A consumes five times(five envoices) in 2023/8/24, his F = 1)
+> * w_avg_freq : sum(spend) ≥ mean(sum(spend)) = 1, oterwise = 0, Sum of every member amount of consuming 
 
 ## Refference
 > Chinese Refference 
