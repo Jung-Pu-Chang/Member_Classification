@@ -57,11 +57,11 @@ CAI = test.CAI()
 |  **spend**  |  **col name of consuming amount**  | **str**  |
 
 ### 2. MemberClass.def LRFM :  
-#### L : L_raw_days = first_consuming_date - last_consuming_date, L_raw_days ≥ mean(L_raw_days) = 1, oterwise = 0, every member contact days
-#### R : R_raw_days = current_date - last_consuming_date, R_raw_days < mean(R_raw_days) = 1, oterwise = 0, how long every member days
-#### F : count(quantity) ≥ mean(count(quantity)) = 1, oterwise = 0, every member consumes frequency per day (eg : Member A consumes five times(five envoices) in 2023/8/24, his F = 1)
-#### M : sum(spend) ≥ mean(sum(spend)) = 1, oterwise = 0, Sum of every member amount of consuming 
-#### LRFM_score_sum ∈ [0,4] = L + R + F + M
+> * L : L_raw_days = first_consuming_date - last_consuming_date, L_raw_days ≥ mean(L_raw_days) = 1, oterwise = 0, every member contact days  
+> * R : R_raw_days = current_date - last_consuming_date, R_raw_days < mean(R_raw_days) = 1, oterwise = 0, how long every member days  
+> * F : count(quantity) ≥ mean(count(quantity)) = 1, oterwise = 0, every member consumes frequency per day (eg : Member A consumes five times(five envoices) in 2023/8/24, his F = 1)
+> * M : sum(spend) ≥ mean(sum(spend)) = 1, oterwise = 0, Sum of every member amount of consuming 
+> * LRFM_score_sum ∈ [0,4] = L + R + F + M
 
 |  Parameter | Discription | Type |
 |:----------:|:------------:|:------------:|
