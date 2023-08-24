@@ -70,7 +70,7 @@ CAI = test.CAI()
 |  **cur_day**  |  **current day**  | **int**  |
 
 ### 3. def NES : 
-> * NES : L_raw_days = first_consuming_date - last_consuming_date, L_raw_days ≥ mean(L_raw_days) = 1, oterwise = 0, every member contact days
+> * NES : N = new customer = R_raw_days < new_def，E = freq_ratio ≤ 2，2 < S1 ≤ 2.5，2.5 < S2 ≤ 3，3 < S3
 > * count
 > * freq
 > * freq_ratio
