@@ -26,12 +26,12 @@ class MemberClass:
         except ValueError: 
             print("MemberID Format Transform Failed !\nChk : https://github.com/Jung-Pu-Chang/Member_Classification/blob/main/example.py")
         
-        for fmt in ('%Y-%m-%d', '%Y/%m/%d', '%d-%m-%Y', '%d/%m/%Y'):
-            try :
+        try :
+            for fmt in ('%Y-%m-%d', '%Y/%m/%d', '%d-%m-%Y', '%d/%m/%Y'):
                 self.data[self.date] = pd.to_datetime(self.data[self.date], format = fmt)
-                #print(f"date format is {fmt}")
-            except ValueError: 
-                print("Date Format Transform Failed !\nChk : https://github.com/Jung-Pu-Chang/Member_Classification/blob/main/example.py")
+        except ValueError: 
+            print("Date Format Transform Failed !\nChk : https://github.com/Jung-Pu-Chang/Member_Classification/blob/main/example.py")
+
 
         try :
             self.data[self.quantity] = self.data[self.quantity].astype(int)
